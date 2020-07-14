@@ -31,4 +31,13 @@
         insert into user(username,sex,birthday,address) values(#{username},#{sex},#{birthday},#{address})
     </insert>
 
+    <!--修改用户信息 -->
+    <update id="update" parameterType="user">
+        update user(username,sex,birthday,address) values(#{username},#{sex},#{birthday},#{address}) where id = #{id}
+    </update>
+
+    <!--删除用户信息 -->
+    <delete id="delete" parameterType="Integer" >
+        update user where id = #{id}
+    </delete>
 </mapper>
